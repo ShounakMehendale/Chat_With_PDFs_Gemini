@@ -50,7 +50,7 @@ def get_rag_chain(retriever):
     ]
     )
     #llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro")
-    model = ChatGoogleGenerativeAI(model="gemini-1.5-pro")
+    model = ChatGoogleGenerativeAI(model="gemini-2.0-flash")
     rag_chain =RunnableMap(
         {
         "context": lambda x : retriever.similarity_search(x["input"],k=3),
